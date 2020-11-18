@@ -1,0 +1,31 @@
+﻿@model CreatePersonViewModel
+@{
+    ViewData["Title"] = "AddPeople";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h1>AddPeople</h1>
+</div>
+
+<div>
+    <form asp-action="AddPeople" method="post">
+        <label asp-for="Person.FirstName"></label>
+        <input asp-for="Person.FirstName" />
+
+        <label asp-for="Person.LastName"></label>
+        <input asp-for="Person.LastName" />
+
+        <label asp-for="Person.PhoneNumber"></label>
+        <input asp-for="Person.PhoneNumber" />
+
+        <label asp-for="Person.Address"></label>
+        <input asp-for="Person.Address" />
+
+        <input type="submit" value="Create Person" />
+
+    </form>
+</div>
+
+
+

@@ -1,0 +1,27 @@
+﻿.page {
+    font-family: sans-serif;
+}
+
+.txtCenter {
+    text-align: center;
+}
+
+.bodyTxt {
+    color:darkslateblue;
+    font-weight: bold;
+    font-size: large;
+    text-align: left;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.center {
+    margin: auto;
+    width: 100%;
+}
