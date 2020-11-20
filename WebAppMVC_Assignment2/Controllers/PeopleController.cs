@@ -9,10 +9,22 @@ namespace WebAppMVC_Assignment2.Controllers
 {
     public class PeopleController : Controller
     {
+        [HttpGet]
         public IActionResult ViewPeople()
         {
             PeopleService ps = new PeopleService();
             PeopleViewModel peopleViewModel = ps.All();
+            return View(peopleViewModel);
+        }
+
+        [HttpPost]
+        public IActionResult ViewPeople(PeopleViewModel pvm)
+        {
+            PeopleService ps = new PeopleService();
+            PeopleViewModel peopleViewModel = new PeopleViewModel();
+
+            peopleViewModel = ps.FindBy(pvm);
+
             return View(peopleViewModel);
         }
 
@@ -30,6 +42,15 @@ namespace WebAppMVC_Assignment2.Controllers
             PeopleService ps = new PeopleService();
             ps.Add(createPersonModelView);
 
+            return RedirectToAction(nameof(ViewPeople));
+        }
+
+        public IActionResult DeletePeople(string id)
+        {
+            PeopleService ps = new PeopleService();
+            ps.Remove(Convert.ToInt32(id));
+
+            PeopleViewModel peopleViewModel = ps.All();
             return RedirectToAction(nameof(ViewPeople));
         }
     }

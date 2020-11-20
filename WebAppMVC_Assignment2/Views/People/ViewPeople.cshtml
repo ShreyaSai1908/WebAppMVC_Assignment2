@@ -1,28 +1,44 @@
 ﻿@model PeopleViewModel
 @{
-    ViewData["Title"] = "ViewPeople";
+    ViewData["Title"] = "View People";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h1>View People</h1>
 
-<div>
+<div class="divPadding">
+    <form asp-action="ViewPeople" method="post">
+        <input asp-for="Search" />
+
+        <input type="submit" value="Search" />
+
+    </form>
+
+</div>   
+
+<div class="divPadding">
     <table>
-        <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Phone Number</th>
-            <th>Address</th>
-        </tr>
-        @foreach (Person person in Model.AllPeople)
-        {
+        <thead>
             <tr>
-                <th>@person.FirstName</th>
-                <th>@person.LastName</th>
-                <th>@person.PhoneNumber</th>
-                <th>@person.Address</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Phone Number</th>
+                <th>Address</th>
             </tr>
-        }
-    </table>
-    
+        </thead>
+        <tbody>
+            @foreach (Person person in Model.AllPeople)
+            {
+                <tr>
+                    <th>@person.FirstName</th>
+                    <th>@person.LastName</th>
+                    <th>@person.PhoneNumber</th>
+                    <th>@person.Address</th>
+                    <th>
+                        <a asp-controller="People" asp-action="DeletePeople" asp-route-id=@person.PersonID class="bodyTxt">Remove</a>
+                    </th>
+                </tr>
+            }
+        </tbody>
+    </table>    
 </div>

@@ -65,7 +65,13 @@ namespace WebAppMVC_Assignment2
                      name: "addpeople",
                      pattern: "AddPeople",
                      defaults: new { controller = "People", action = "AddPeople" });
-            });
+                
+                endpoints.MapControllerRoute(
+                     name: "deletepeople",
+                     pattern: "{action=DeletePeople}/{id?}",
+                     defaults: new { controller = "People", action = "DeletePeople" });
+
+             });
         }
     }
 }

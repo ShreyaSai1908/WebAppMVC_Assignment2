@@ -25,7 +25,20 @@ namespace WebAppMVC_Assignment2.Models
         }
         public Person Read(int id) 
         {
-            return null;
+            Person searchedPerson = new Person();
+            List<Person> allPeople = new List<Person>();
+            allPeople = Read();
+
+            foreach (Person person in allPeople)
+            {
+                if (person.PersonID == id)
+                {
+                    searchedPerson = person;
+                    break;
+                }
+            }
+
+            return searchedPerson;
         }
         public Person Update(Person person) 
         {
@@ -33,6 +46,7 @@ namespace WebAppMVC_Assignment2.Models
         }
         public bool Delete(Person person) 
         {
+            people.Remove(person);
             return true;
         }
 

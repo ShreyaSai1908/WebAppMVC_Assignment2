@@ -8,5 +8,8 @@ namespace WebAppMVC_Assignment2.Models
     public class PeopleViewModel
     {
         public List<Person> AllPeople { get; set; }
+
+        public string Search { get; set; }
+
     }
 }
