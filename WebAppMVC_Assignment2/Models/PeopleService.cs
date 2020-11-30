@@ -64,9 +64,16 @@ namespace WebAppMVC_Assignment2.Models
 
             return searchedPerson;
         }
-        public bool Edit(int id, Person person)
+        public Person Edit(int id, Person editPerson)
         {
-            return true;
+            Person person = FindBy(id);
+            
+            person.FirstName = editPerson.FirstName;
+            person.LastName = editPerson.LastName;
+            person.PhoneNumber = editPerson.PhoneNumber;
+            person.Address = editPerson.Address;
+
+            return person;
         }
         public bool Remove(int findID) 
         {

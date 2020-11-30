@@ -48,5 +48,18 @@ namespace WebAppMVC_Assignment2.Controllers
             peopleViewModel = ps.All();
             return RedirectToAction(nameof(Add_View_People));
         }
+        public IActionResult EditPeople(int id)
+        {
+            Person person = new Person();
+            
+            person.FirstName = "EditFName";
+            person.LastName = "EditLName";
+            person.PhoneNumber = "123456789";
+            person.Address = "EditAddress";
+
+            ps.Edit(id , person);
+            peopleViewModel = ps.All();
+            return RedirectToAction(nameof(Add_View_People));
+        }
     }
 }

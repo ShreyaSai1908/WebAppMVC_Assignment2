@@ -64,6 +64,9 @@
                         <th>
                             <a asp-controller="PeopleOneView" asp-action="DeletePeople" asp-route-id=@person.PersonID class="bodyTxt">Remove</a>
                         </th>
+                        <th> 
+                            <a asp-controller="PeopleOneView" asp-action="EditPeople" asp-route-id=@person.PersonID  class="bodyTxt">Edit</a>
+                        </th>
                     </tr>
                 }
             }
