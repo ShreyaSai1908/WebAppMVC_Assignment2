@@ -9,6 +9,8 @@ namespace WebAppMVC_Assignment2.Controllers
 {
     public class PeopleController : Controller
     {
+        
+
         [HttpGet]
         public IActionResult ViewPeople()
         {

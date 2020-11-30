@@ -30,6 +30,7 @@ namespace WebAppMVC_Assignment2
             services.AddMvc(); //this is mandatory to add here for MVC projects 
             services.AddControllersWithViews();
             services.AddRazorPages();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
