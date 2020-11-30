@@ -10,19 +10,28 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <div class="bodyTxt">
-        <ul>
-            <li>
-                <a asp-controller="People" asp-action="AddPeople" class="bodyTxt">Add People</a>
-            </li>
-            <li>
-                <a asp-controller="People" asp-action="ViewPeople" class="bodyTxt">View People</a>
-            </li>
-        </ul>
+    <!--
+        <div class="bodyTxt">
+            <ul>
+                <li>
+                    <a href="AddPeople" class="bodyTxt">Add People</a>
+                </li>
+                <li>
+                    <a href="ViewPeople" class="bodyTxt">View People</a>
+                </li>
+            </ul>
+        </div>
+    -->
+    <div>
+        <h1 class="txtCenter">
+            MVC Assignment-2
+        </h1>
     </div>
+
     <div>
         @RenderBody()
     </div>
+
     <div class="footer">
         <p>&#169;Author: Shreya Sai</p>
         <p><a href="mailto:shreyasai1993@gmail.com">shreyasai1993@gmail.com</a></p>

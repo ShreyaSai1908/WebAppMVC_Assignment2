@@ -11,5 +11,7 @@ namespace WebAppMVC_Assignment2.Models
 
         public string Search { get; set; }
 
+        public CreatePersonViewModel AddPerson { get; set; }
+
     }
 }

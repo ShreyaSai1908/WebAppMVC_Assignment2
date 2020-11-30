@@ -41,8 +41,8 @@ namespace WebAppMVC_Assignment2
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseDefaultFiles();   //this used so that webserver can recognize index.html file by its default name
-            app.UseStaticFiles();   //this is used so that webserver can recognize static files like html, img files, css file javascript files
+            //app.UseDefaultFiles();   //this used so that webserver can recognize index.html file by its default name
+            //app.UseStaticFiles();   //this is used so that webserver can recognize static files like html, img files, css file javascript files
             app.UseRouting();      //this is used to enable routing of user requests in the web application
             app.UseSession();      // this is mandatory for using Sessions in your Web App
 
@@ -55,11 +55,11 @@ namespace WebAppMVC_Assignment2
                 });
                 */
 
-                
 
+                /*
                 endpoints.MapControllerRoute(
-                     name: "viewpeople",
-                     pattern: "ViewPeople",
+                     name: "people",
+                     pattern: "People",
                      defaults: new { controller = "People", action = "ViewPeople" });
 
                 endpoints.MapControllerRoute(
@@ -71,8 +71,20 @@ namespace WebAppMVC_Assignment2
                      name: "deletepeople",
                      pattern: "{action=DeletePeople}/{id?}",
                      defaults: new { controller = "People", action = "DeletePeople" });
+                */
 
-             });
+                endpoints.MapControllerRoute(
+                     name: "Route_1",
+                     pattern: "{controller}/{action}/{id?}",
+                     defaults: new { controller = "PeopleOneView", action = "Add_View_People" });
+
+                /*
+                endpoints.MapControllerRoute(
+                     name: "Route_2",
+                     pattern: "{controller}/{action}/{id?}",
+                     defaults: new { controller = "People", action = "AddPeople" });*/
+
+            });
         }
     }
 }

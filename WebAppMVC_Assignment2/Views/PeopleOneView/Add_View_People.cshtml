@@ -9,7 +9,7 @@
 </div>
 
 <div>
-    <form asp-action="AddPeople" method="post">
+    <form asp-action="Add_View_People" method="post">
         <label asp-for="AddPerson.Person.FirstName"></label>
         <input asp-for="AddPerson.Person.FirstName" />
 
@@ -32,7 +32,7 @@
 </div>
 
 <div class="divPadding">
-    <form asp-action="AddPeople" method="post">
+    <form asp-action="Add_View_People" method="post">
         <input asp-for="Search" />
 
         <input type="submit" value="Search" />
@@ -52,8 +52,8 @@
             </tr>
         </thead>
         <tbody>
-            @if  (Model.AllPeople !=null)
-            { 
+            @if (Model.AllPeople != null)
+            {
                 @foreach (Person person in Model.AllPeople)
                 {
                     <tr>
@@ -62,7 +62,7 @@
                         <th>@person.PhoneNumber</th>
                         <th>@person.Address</th>
                         <th>
-                            <a asp-controller="People" asp-action="DeletePeople" asp-route-id=@person.PersonID class="bodyTxt">Remove</a>
+                            <a asp-controller="PeopleOneView" asp-action="DeletePeople" asp-route-id=@person.PersonID class="bodyTxt">Remove</a>
                         </th>
                     </tr>
                 }
