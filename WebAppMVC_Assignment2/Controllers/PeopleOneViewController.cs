@@ -52,6 +52,7 @@ namespace WebAppMVC_Assignment2.Controllers
         {
             Person person = new Person();
             
+            //to be replaced by user input
             person.FirstName = "EditFName";
             person.LastName = "EditLName";
             person.PhoneNumber = "123456789";
