@@ -30,6 +30,7 @@ namespace WebAppMVC_Assignment2.Controllers
             if (objModel.AddPerson != null)
             {
                 createPersonModelView = objModel.AddPerson;
+                peopleViewModel = null;
                 ps.Add(createPersonModelView);
             }
 
@@ -41,9 +42,9 @@ namespace WebAppMVC_Assignment2.Controllers
             return RedirectToAction(nameof(Add_View_People));
         }
 
-        public IActionResult DeletePeople(string id)
+        public IActionResult DeletePeople(int id)
         {
-            ps.Remove(Convert.ToInt32(id));
+            ps.Remove(id);
             peopleViewModel = ps.All();
             return RedirectToAction(nameof(Add_View_People));
         }

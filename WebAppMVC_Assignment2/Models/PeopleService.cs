@@ -7,25 +7,26 @@ namespace WebAppMVC_Assignment2.Models
 {
     public class PeopleService : IPeopleService
     {
-        public bool Add(CreatePersonViewModel modelData)
-        {
-            InMemoryPeopleRepo pr = new InMemoryPeopleRepo();
-            bool isPersonAdded=pr.Create(modelData.Person);
+        private static InMemoryPeopleRepo pr = new InMemoryPeopleRepo();
 
-            return isPersonAdded;
+        public Person Add(CreatePersonViewModel modelData)
+        {
+            Person personAdded=pr.Create(modelData.Person);
+
+            return personAdded;
         }
 
         public PeopleViewModel All()
         {
             PeopleViewModel peopleViewModel = new PeopleViewModel();
-            InMemoryPeopleRepo pr = new InMemoryPeopleRepo();
+            //InMemoryPeopleRepo pr = new InMemoryPeopleRepo();
             peopleViewModel.AllPeople=pr.Read();
             return peopleViewModel;
         }
         public PeopleViewModel FindBy(PeopleViewModel pvm)
         {
             PeopleViewModel peopleViewModel = new PeopleViewModel();
-            InMemoryPeopleRepo pr = new InMemoryPeopleRepo();
+           // InMemoryPeopleRepo pr = new InMemoryPeopleRepo();
 
             List<Person> searchedPeople = new List<Person>();
             peopleViewModel.AllPeople = pr.Read();
@@ -46,7 +47,7 @@ namespace WebAppMVC_Assignment2.Models
         }
         public Person FindBy(int findID)
         {
-            InMemoryPeopleRepo pr = new InMemoryPeopleRepo();
+            //InMemoryPeopleRepo pr = new InMemoryPeopleRepo();
 
             List<Person> allPeople = new List<Person>();
             allPeople = pr.Read();
@@ -70,7 +71,7 @@ namespace WebAppMVC_Assignment2.Models
         public bool Remove(int findID) 
         {
             bool result = false;
-            InMemoryPeopleRepo pr = new InMemoryPeopleRepo();
+            //InMemoryPeopleRepo pr = new InMemoryPeopleRepo();
                         
             Person removePerson = pr.Read(findID);
             result = pr.Delete(removePerson);            

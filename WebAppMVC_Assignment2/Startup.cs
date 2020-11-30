@@ -56,6 +56,7 @@ namespace WebAppMVC_Assignment2
                 */
 
 
+                //Need not to define endpoints for each action
                 /*
                 endpoints.MapControllerRoute(
                      name: "people",
@@ -73,6 +74,7 @@ namespace WebAppMVC_Assignment2
                      defaults: new { controller = "People", action = "DeletePeople" });
                 */
 
+                //Endpoints should rather be more generic like these 
                 endpoints.MapControllerRoute(
                      name: "Route_1",
                      pattern: "{controller}/{action}/{id?}",

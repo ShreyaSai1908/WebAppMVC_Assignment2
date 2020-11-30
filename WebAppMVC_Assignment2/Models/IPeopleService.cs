@@ -7,7 +7,7 @@ namespace WebAppMVC_Assignment2.Models
 {
     interface IPeopleService
     {
-        public bool Add(CreatePersonViewModel person);
+        public Person Add(CreatePersonViewModel person);
         public PeopleViewModel All();
         public PeopleViewModel FindBy(PeopleViewModel search);
         public Person FindBy(int id);

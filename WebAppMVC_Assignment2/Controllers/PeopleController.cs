@@ -8,15 +8,12 @@ using WebAppMVC_Assignment2.Models;
 namespace WebAppMVC_Assignment2.Controllers
 {
     public class PeopleController : Controller
-    {
-        private static PeopleService ps = new PeopleService();
-        private static PeopleViewModel peopleViewModel;
-
+    {        
         [HttpGet]
         public IActionResult AddPeople()
         {
-            //PeopleService ps = new PeopleService();
-            //PeopleViewModel peopleViewModel = ps.All();
+            PeopleService ps = new PeopleService();
+            PeopleViewModel peopleViewModel = ps.All();
             if (peopleViewModel == null)
             {
                 peopleViewModel = ps.All();
@@ -28,36 +25,19 @@ namespace WebAppMVC_Assignment2.Controllers
         [HttpPost]
         public IActionResult AddPeople(PeopleViewModel objModel)
         {
-            /*PeopleService ps = new PeopleService();
+            PeopleService ps = new PeopleService();
             PeopleViewModel peopleViewModel = new PeopleViewModel();
             peopleViewModel = ps.FindBy(objModel);
-            return View(peopleViewModel);*/
-
-            //PeopleService ps = new PeopleService();
-            
-            CreatePersonViewModel createPersonModelView = new CreatePersonViewModel();
-            if (objModel.AddPerson != null)
-            {
-                createPersonModelView = objModel.AddPerson;
-                ps.Add(createPersonModelView);
-            }
-
-            //PeopleViewModel peopleViewModel = new PeopleViewModel();
-            if (objModel.Search!=null)
-            { 
-               peopleViewModel = ps.FindBy(objModel);
-            }
-
-            return RedirectToAction(nameof(AddPeople));            
+            return View(peopleViewModel);                       
         }
 
-       /* [HttpGet]
-        public IActionResult AddPeople()
+        [HttpGet]
+        public IActionResult ViewPeople()
         {
             return View();
-        }*/
+        }
 
-        /*[HttpPost]
+        [HttpPost]
         public IActionResult AddPeople(CreatePersonViewModel objModel)
         {
             CreatePersonViewModel createPersonModelView = new CreatePersonViewModel();
@@ -66,17 +46,16 @@ namespace WebAppMVC_Assignment2.Controllers
             ps.Add(createPersonModelView);
 
             return RedirectToAction(nameof(ViewPeople));
-        }*/
+        }
 
         public IActionResult DeletePeople(string id)
         {
-            //PeopleService ps = new PeopleService();
+            PeopleService ps = new PeopleService();
             ps.Remove(Convert.ToInt32(id));
 
-            //PeopleViewModel peopleViewModel = ps.All();
+            PeopleViewModel peopleViewModel = ps.All();
             peopleViewModel = ps.All();
-            //return RedirectToAction(nameof(ViewPeople));
-            return RedirectToAction(nameof(AddPeople));
+            return RedirectToAction(nameof(ViewPeople));
         }
     }
 }

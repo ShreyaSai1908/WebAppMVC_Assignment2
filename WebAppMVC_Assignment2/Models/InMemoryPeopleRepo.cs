@@ -9,7 +9,7 @@ namespace WebAppMVC_Assignment2.Models
     {
         private static List<Person> people = new List<Person>();
         private static int idCounter = 0;
-        public bool Create(Person newPerson) 
+        public Person Create(Person newPerson) 
         {
             Person person = newPerson;
 
@@ -17,7 +17,7 @@ namespace WebAppMVC_Assignment2.Models
             person.PersonID = idCounter;
             people.Add(person);
 
-            return true;
+            return person;
         }
         public List<Person> Read() 
         {
