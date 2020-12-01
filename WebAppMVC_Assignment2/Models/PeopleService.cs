@@ -11,8 +11,7 @@ namespace WebAppMVC_Assignment2.Models
 
         public Person Add(CreatePersonViewModel modelData)
         {
-            Person personAdded=pr.Create(modelData.Person);
-
+            Person personAdded=pr.Create(modelData.FirstName,modelData.LastName,modelData.PhoneNumber,modelData.Address);
             return personAdded;
         }
 

@@ -7,7 +7,7 @@ namespace WebAppMVC_Assignment2.Models
 {
     interface IPeopleRepo
     {
-        public Person Create(Person person);
+        public Person Create(string FirstName, string LastName, string PhoneNumber, string Address);
         public List<Person> Read();
         public Person Read(int id);
         public Person Update(Person person);

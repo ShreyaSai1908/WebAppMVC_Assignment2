@@ -2,6 +2,13 @@
     font-family: sans-serif;
 }
 
+.errText {
+    color: red;
+    font-weight: bold;
+    font-size: small;
+    text-align: left;
+}
+
 .txtCenter {
     text-align: center;
 }

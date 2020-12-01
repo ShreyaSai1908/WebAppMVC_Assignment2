@@ -29,9 +29,16 @@ namespace WebAppMVC_Assignment2.Controllers
             CreatePersonViewModel createPersonModelView = new CreatePersonViewModel();
             if (objModel.AddPerson != null)
             {
-                createPersonModelView = objModel.AddPerson;
-                peopleViewModel = null;
-                ps.Add(createPersonModelView);
+                if (ModelState.IsValid)
+                {
+                    createPersonModelView = objModel.AddPerson;
+                    peopleViewModel = null;
+                    ps.Add(createPersonModelView);
+                }
+                else
+                {
+                    peopleViewModel.ModelErr = "Required fields are missing";
+                }
             }
 
             if (objModel.Search != null)

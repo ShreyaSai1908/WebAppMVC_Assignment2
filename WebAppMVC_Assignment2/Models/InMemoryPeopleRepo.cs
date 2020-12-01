@@ -9,12 +9,18 @@ namespace WebAppMVC_Assignment2.Models
     {
         private static List<Person> people = new List<Person>();
         private static int idCounter = 0;
-        public Person Create(Person newPerson) 
+        public Person Create(string FirstName, string LastName, string PhoneNumber, string Address)
         {
-            Person person = newPerson;
+            Person person = new Person();
 
             idCounter++;
             person.PersonID = idCounter;
+
+            person.FirstName = FirstName;
+            person.LastName = LastName;
+            person.PhoneNumber = PhoneNumber;
+            person.Address = Address;
+
             people.Add(person);
 
             return person;

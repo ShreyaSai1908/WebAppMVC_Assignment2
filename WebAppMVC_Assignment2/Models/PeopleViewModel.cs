@@ -13,5 +13,7 @@ namespace WebAppMVC_Assignment2.Models
 
         public CreatePersonViewModel AddPerson { get; set; }
 
+        public string ModelErr { get; set; }
+
     }
 }
